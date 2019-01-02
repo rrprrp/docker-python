@@ -44,7 +44,7 @@ RUN pip uninstall -y tensorflow && \
     rm -rf /tmp/tensorflow_gpu && \
     conda uninstall -y pytorch-cpu torchvision-cpu && \
     conda install -y pytorch torchvision -c pytorch && \
-    pip uninstall mxnet && \
+    pip uninstall -y mxnet && \
     pip install mxnet-cu92
 
 # Install GPU-only packages
