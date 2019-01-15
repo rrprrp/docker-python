@@ -510,3 +510,7 @@ ADD patches/sitecustomize.py /root/.local/lib/python3.6/site-packages/sitecustom
 
 # Set backend for matplotlib
 ENV MPLBACKEND "agg"
+
+RUN sed -i 's/prohibit-password/yes/g' /etc/ssh/sshd_config
+ENTRYPOINT ["/usr/sbin/sshd","-D"]
+EXPOSE 22
